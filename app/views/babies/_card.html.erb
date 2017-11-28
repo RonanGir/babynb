@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+   <% @babies.each do |baby|%>
+   <div class="col-xs-12 col-sm-4">
+    <div class="card-container">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path baby.photo, height: 200 %>');">
+        <div class="card-description">
+         <h1><%= baby.firstname.capitalize %> <%= baby.lastname.capitalize %></h1>
+       </div>
+        <div class="card-price">
+        <p><%= baby.price %><i class="fa fa-eur" aria-hidden="true"></i>/day</p>
+        </div>
+       <a class="card-link" href="#" ></a>
+     </div>
+      <div class="card-footer">
+        <div class="footer-info">
+            <p><strong><%= baby.age %> years old</strong></p>
+            <p><i class="fa fa-globe" aria-hidden="true"></i><%= baby.origin.capitalize %></p>
+            </div>
+            <div class="controls">
+              <a href="#"><i class="fa fa-star"></i></a></li>
+              <a href="#"><i class="fa fa-heart"></i></a></li>
+            </div>
+          </div>
+   </div>
+ </div>
+ <% end %>
+</div>
+</div>
