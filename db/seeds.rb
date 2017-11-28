@@ -9,7 +9,7 @@ justin = User.create!(
   password: "123456",
   gender: 'male',
   age: 45,
-  description: "Already have three children"
+  description: "Already have three children",
   photo: File.open(Rails.root.join('db/fixtures/images/justin.jpg'))
   )
 
@@ -20,7 +20,7 @@ kenneth = User.create!(
   password: "123456",
   gender: 'male',
   age: 34,
-  description: "Love kids"
+  description: "Love kids",
   photo: File.open(Rails.root.join('db/fixtures/images/kenneth.jpg'))
   )
 
@@ -32,7 +32,7 @@ brett = User.create!(
   password: "123456",
   gender: 'male',
   age: 24,
-  description: "J'ai pleins de bonbons dans ma caravane"
+  description: "J'ai pleins de bonbons dans ma caravane",
   photo: File.open(Rails.root.join('db/fixtures/images/brett.jpg'))
   )
 
@@ -44,7 +44,7 @@ judy = User.create!(
   password: "123456",
   gender: 'female',
   age: 36,
-  description: "You'd like to book a new baby for my daughter"
+  description: "You'd like to book a new baby for my daughter",
   photo: File.open(Rails.root.join('db/fixtures/images/judy.jpg'))
   )
 
@@ -56,7 +56,7 @@ leona = User.create!(
   password: "123456",
   gender: 'female',
   age: 50,
-  description: "J'ai pleins de bonbons dans ma maison"
+  description: "J'ai pleins de bonbons dans ma maison",
   photo: File.open(Rails.root.join('db/fixtures/images/leona.jpg'))
   )
 
@@ -70,7 +70,7 @@ jordy = Baby.create!(
   origin: 'asian',
   location: 'bali',
   price: 20,
-  description: 'Big head'
+  description: 'Big head',
   photo: File.open(Rails.root.join('db/fixtures/images/jordy.jpg'))
   )
 
@@ -83,7 +83,7 @@ ben = Baby.create!(
   origin: 'Israelian',
   location: 'Israel',
   price: 25,
-  description: 'Nice smile '
+  description: 'Nice smile ',
   photo: File.open(Rails.root.join('db/fixtures/images/ben.jpg'))
   )
 
@@ -96,7 +96,7 @@ tom = Baby.create!(
   origin: 'French',
   location: 'Nantes',
   price: 45,
-  description: 'Tri-linguale '
+  description: 'Tri-linguale ',
   photo: File.open(Rails.root.join('db/fixtures/images/tom.jpg'))
   )
 
@@ -109,7 +109,7 @@ paul = Baby.create!(
   origin: 'American',
   location: 'Chicago',
   price: 5,
-  description: 'Super fat, loves burgers'
+  description: 'Super fat, loves burgers',
   photo: File.open(Rails.root.join('db/fixtures/images/paul.jpg'))
   )
 
@@ -122,7 +122,7 @@ jerry = Baby.create!(
   origin: 'chinese',
   location: 'shangai',
   price: 60,
-  description: 'Eat its own poop'
+  description: 'Eat its own poop',
   photo: File.open(Rails.root.join('db/fixtures/images/jerry.jpg'))
   )
 
@@ -135,7 +135,7 @@ baptiste = Baby.create!(
   origin: 'Island',
   location: 'Nowhere',
   price: 70,
-  description: 'Lot of hairs'
+  description: 'Lot of hairs',
   photo: File.open(Rails.root.join('db/fixtures/images/baptiste.jpg'))
   )
 
@@ -148,7 +148,7 @@ pepito = Baby.create!(
   origin: 'Mexico',
   location: 'Mexico',
   price: 80,
-  description: 'Nice ears'
+  description: 'Nice ears',
   photo: File.open(Rails.root.join('db/fixtures/images/pepito.jpg'))
   )
 
@@ -161,7 +161,7 @@ pepita = Baby.create!(
   origin: 'Argentina',
   location: 'Buenos Aires',
   price: 10,
-  description: 'Knows how to draw '
+  description: 'Knows how to draw ',
   photo: File.open(Rails.root.join('db/fixtures/images/pepita.jpg'))
   )
 
@@ -174,7 +174,7 @@ dimitrov = Baby.create!(
   origin: 'Russian',
   location: 'Moscow',
   price: 159,
-  description: 'Have a tons of toys'
+  description: 'Have a tons of toys',
   photo: File.open(Rails.root.join('db/fixtures/images/dimitrov.jpg'))
   )
 
@@ -187,6 +187,6 @@ petra = Baby.create!(
   origin: 'American',
   location: 'detroit',
   price: 60,
-  description: 'Can walk, run and fall'
+  description: 'Can walk, run and fall',
   photo: File.open(Rails.root.join('db/fixtures/images/petra.jpg'))
   )
