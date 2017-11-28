@@ -126,11 +126,11 @@ jerry = Baby.create!(
   photo: File.open(Rails.root.join('db/fixtures/images/jerry.jpg'))
   )
 
-baptiste = Baby.create!(
+camille = Baby.create!(
   user: justin,
-  firstname: 'Baptiste',
-  lastname: 'Louis',
-  gender: 'male',
+  firstname: 'Camille',
+  lastname: 'Somerset',
+  gender: 'female',
   age: 2,
   origin: 'Island',
   location: 'Nowhere',
