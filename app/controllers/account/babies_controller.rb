@@ -1,5 +1,5 @@
 class Account::BabiesController < ApplicationController
-  before_action :set_baby, only: [:edit, :update]
+  before_action :set_baby, only: [:edit, :update, :destroy]
 
   def new
     @baby = Baby.new
@@ -25,6 +25,9 @@ class Account::BabiesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
   end
 
   private
