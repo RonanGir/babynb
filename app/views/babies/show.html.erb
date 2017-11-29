@@ -1,0 +1,45 @@
+ <div class="container">
+      <div class="profile text-center">
+        <div class="main">
+          <div class="main-content">
+            <div><%= image_tag @baby.photo, class: "profil-image"  %></div>
+            <h1><%= @baby.firstname.capitalize %> <%= @baby.lastname.capitalize %></h1>
+            <p><i class="fontawesome fa fa-credit-card" aria-hidden="true"></i><%= @baby.price %> €/day</p>
+            <a href="#" class="btn btn-primary btn-lg">Book <%= @baby.firstname.capitalize %> </a>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3><%= @baby.age %></h3>
+            <p><i class="fontawesome fa fa-user" aria-hidden="true"></i>
+Years old</p>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-content">
+          <% if @baby.gender == "female" %>
+            <i class="gender-font-girl fa fa-venus" aria-hidden="true"></i>
+          <% else %>
+            <i class="gender-font-man fa fa-mars" aria-hidden="true"></i>
+          <% end %>
+            <p><i class="fontawesome fa fa-venus-mars" aria-hidden="true"></i>Gender</p>
+          </div>
+          </div>
+        <div class="stat">
+          <div class="stat-content">
+            <h3><%= @baby.origin %></h3>
+            <p><i class="fontawesome fa fa-globe" aria-hidden="true"></i>Origin</p>
+            <h3><%= @baby.location %></h3>
+            <p><i class="fontawesome fa fa-map-marker" aria-hidden="true"></i>Location</p>
+          </div>
+          </div>
+        <div class="description">
+          <div class="description-content">
+            <h3>More about <%= @baby.firstname.capitalize %></h3>
+            <p class="text-justify">
+              <%= @baby.description %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
