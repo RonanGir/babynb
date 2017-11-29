@@ -6,17 +6,25 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+    <% if current_user %>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Becomes owner</a>
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Becomes owner</a>
+      <%= link_to 'My bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %>
 
-    <%= link_to 'My bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+      <%= link_to 'Add a baby', new_account_baby_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+    <% else %>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Becomes owner</a>
 
-    <%= link_to 'Add a baby', new_account_baby_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+      <%= link_to 'My bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+
+      <%= link_to 'Add a baby', new_account_baby_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+
+      <%= link_to 'Sign in / Sign up', new_user_session_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+    <% end %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-
       <% if current_user %>
         <% if current_user.photo.url.nil? %>
             <%= image_tag('user.png', class: 'avatar dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
@@ -26,10 +34,16 @@
       <% end %>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Log Out</a></li>
+            <% if current_user %>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><a href="#">Book a baby</a></li>
+              <li><%= link_to 'Log in', new_user_session_path %></li>
+            <% end %>
           </ul>
+
       </div>
     </div>
   </div>
