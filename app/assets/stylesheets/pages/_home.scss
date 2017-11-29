@@ -1,14 +1,18 @@
-.container {
-}
-
 .banner {
+  margin-top: 10px;
   color: white;
-  position:fixed;
-  top:0px;left:0px;width:100%;
   height:100%;
   display:flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  text-align: center;
+  padding: 200px 0px;
+  background-position: center;
+  box-shadow: 10px 10px 15px lightgrey;
+}
+
+.banner h1 {
+  color: $green;
 }
 
 .banner-content {
@@ -21,10 +25,62 @@
   margin-bottom: 20px;
 }
 
-h1 {
-  color: $green;
+//FEATURES CARDS
+.card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
 }
 
-h1:hover {
-  color: $red;
+.features {
+  margin-top: 60px;
+}
+
+.banner .btn-danger:hover {
+  opacity: 0.7;
+}
+
+.fa-lock {
+  font-size: 60px;
+}
+
+.fa-check-square-o {
+  font-size: 60px;
+}
+
+.fa-heart {
+  font-size: 60px;
+}
+
+.feature-red {
+  background-color: $red;
+  padding: 50px;
+  width: 160px;
+  height: 160px;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-radius: 50%;
+
+}
+
+.feature-blue {
+  background-color: $blue;
+  padding: 50px;
+  width: 160px;
+  height: 160px;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-radius: 50%;
+}
+
+.feature-green {
+  background-color: $green;
+  padding: 50px;
+  width: 160px;
+  height: 160px;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-radius: 50%;
+}
+
+.row {
+  margin-bottom: 50px;
 }
