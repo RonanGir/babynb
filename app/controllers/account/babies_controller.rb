@@ -10,6 +10,7 @@ class Account::BabiesController < ApplicationController
 
   def new
     @baby = Baby.new
+    @baby_origins = Baby::ORIGINS
   end
 
   def create

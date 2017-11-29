@@ -1,5 +1,5 @@
 class Baby < ApplicationRecord
-  ORIGINS = %w(asian european african indian south-american north-american)
+  ORIGINS = %w(asian european african indian south-american north-american arabian)
   mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :bookings, dependent: :destroy
