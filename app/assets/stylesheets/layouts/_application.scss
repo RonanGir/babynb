@@ -2,7 +2,9 @@ body {
   background-image: asset-url('bg.jpg');
 }
 
-
+.container {
+  background-color: $white;
+}
 
 .form-container {
   margin: 20px 5px;
