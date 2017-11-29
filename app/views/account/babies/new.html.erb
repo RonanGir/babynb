@@ -12,7 +12,7 @@
               <%= f.input :lastname %>
               <%= f.input :age %>
               <%= f.input :gender, as: :radio_buttons, collection: %w(male female) %>
-              <%= f.input :origin, as: :select, collection: %w(asian european african indian south-american north-american), prompt: 'select an origin' %>
+              <%= f.input :origin, as: :select, collection: @baby_origins, prompt: 'select an origin' %>
             </div>
             <div class="col-xs-12 col-md-6">
               <%= f.input :location %>
