@@ -1,0 +1,36 @@
+<div class="container">
+  <% @babies.each do |baby| %>
+    <div class="message">
+      <%= image_tag baby.photo, class: 'avatar-square' %>
+      <div class="message-name">
+        <h3><%= baby.firstname.capitalize %> <%= baby.lastname.capitalize %></h3>
+        <% if baby.age == 1 %>
+          <p><%= baby.age %> year old </p>
+        <% else %>
+          <p><%= baby.age %> years old </p>
+        <% end %>
+        <p><strong><%= baby.price %> €</strong></p>
+      </div>
+      <div class="message-body">
+        <p><strong>Description</strong></p>
+        <p><%= baby.description %></p>
+      </div>
+      <div class="message-status">
+        <% if baby.availability == true %>
+          <p> Availability : <strong class="status accepted">yes</strong></p>
+        <% else %>
+          <p> Availability : <strong class="status declined">No</strong> %></p>
+        <% end %>
+
+        <%= link_to edit_account_baby_path(baby) do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+
+        <%= link_to account_baby_path(baby), method: :delete do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
