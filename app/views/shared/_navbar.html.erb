@@ -1,0 +1,58 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to babies_path do %>
+  <%= image_tag('logo.png', size: '70x40', alt: 'logo', class: 'navbar-wagon-brand')%>
+  <% end %>
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Becomes owner</a>
+
+    <%= link_to 'My bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+
+    <%= link_to 'Add a baby', new_account_baby_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+
+      <% if current_user %>
+        <% if current_user.photo.url.nil? %>
+            <%= image_tag('user.png', class: 'avatar dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
+        <% else %>
+          <%= image_tag(current_user.photo, class: 'avatar dropdown-toggle',alt: 'profile-picture', id: 'navbar-wagon-menu', data: { toggle: 'dropdown' }) %>
+        <% end %>
+      <% end %>
+
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <% if current_user %>
+          <li><a href="#">Becomes owner</a></li>
+          <li><a href="#">My bookings</a></li>
+          <li><a href="#">Add a baby</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+
+        <% else %>
+          <li><a href="#">Becomes owner</a></li>
+          <li><a href="#">Book a baby</a></li>
+          <li><%= link_to 'Log in', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
