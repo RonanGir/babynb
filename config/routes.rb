@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :babies, except: [:destroy] # as owner
+    resources :babies # as owner
 
     resources :requests, only: [:index] do # as owner
       member do

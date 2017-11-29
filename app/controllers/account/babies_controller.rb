@@ -1,5 +1,12 @@
 class Account::BabiesController < ApplicationController
-  before_action :set_baby, only: [:edit, :update, :destroy]
+  before_action :set_baby, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @babies = current_user.babies
+  end
+
+  def show
+  end
 
   def new
     @baby = Baby.new
@@ -28,6 +35,8 @@ class Account::BabiesController < ApplicationController
   end
 
   def destroy
+    @baby.destroy
+    redirect_to account_babies_path
   end
 
   private
