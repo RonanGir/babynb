@@ -10,7 +10,12 @@
             <div class="card-price">
             <p><%= baby.price %><i class="fa fa-eur" aria-hidden="true"></i></p>
             </div>
-           <a class="card-link" href="#"><button type="button" class="btn btn-primary">Book <%= baby.firstname.capitalize %></button></a>
+            <%= link_to baby_path(baby), class: 'card-link btn-primary' do %>
+            <!-- <a class="card-link" href=""> -->
+              <button type="button" class="btn btn-primary">Book <%= baby.firstname.capitalize %>
+              </button>
+            <!-- </a> -->
+            <% end %>
           </div>
           <div class="card-footer">
             <div class="footer-info">
