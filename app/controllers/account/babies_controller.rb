@@ -1,11 +1,8 @@
 class Account::BabiesController < ApplicationController
-  before_action :set_baby, only: [:show, :edit, :update, :destroy]
+  before_action :set_baby, only: [:edit, :update, :destroy]
 
   def index
     @babies = current_user.babies
-  end
-
-  def show
   end
 
   def new
@@ -17,7 +14,7 @@ class Account::BabiesController < ApplicationController
     @baby = Baby.new(baby_params)
     @baby.user = current_user
     if @baby.save
-      redirect_to account_baby_path(@baby)
+      redirect_to account_babies_path
     else
       render :new
     end
@@ -29,7 +26,7 @@ class Account::BabiesController < ApplicationController
 
   def update
     if @baby.update(baby_params)
-      redirect_to account_baby_path(@baby)
+      redirect_to account_babies_path(@baby)
     else
       render :new
     end
