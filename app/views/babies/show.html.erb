@@ -5,7 +5,11 @@
             <div><%= image_tag @baby.photo, class: "profil-image"  %></div>
             <h1><%= @baby.firstname.capitalize %> <%= @baby.lastname.capitalize %></h1>
             <p><i class="fontawesome fa fa-credit-card" aria-hidden="true"></i><%= @baby.price %> €/day</p>
-            <a href="#" class="btn btn-primary btn-lg">Book <%= @baby.firstname.capitalize %> </a>
+
+            <%= link_to new_baby_booking_path(@baby), class: 'btn-log' do %>
+              <button type="button" class="btn btn-primary">Book <%= @baby.firstname.capitalize %>
+              </button>
+              <% end %>
           </div>
         </div>
         <div class="stat">
