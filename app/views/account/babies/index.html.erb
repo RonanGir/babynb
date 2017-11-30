@@ -1,4 +1,7 @@
 <div class="container">
+ <div class="text-center add-baby-button">
+  <%= link_to 'Add a new baby', new_account_baby_path, class: 'btn btn-success' %>
+</div>
   <% @babies.each do |baby| %>
     <div class="message">
       <%= image_tag baby.photo, class: 'avatar-square' %>
@@ -9,7 +12,7 @@
         <% else %>
           <p><%= baby.age %> years old </p>
         <% end %>
-        <p><strong><%= baby.price %> €</strong></p>
+        <p><strong><%= baby.price %> €</strong> /day</p>
       </div>
       <div class="message-body">
         <p><strong>Description</strong></p>
