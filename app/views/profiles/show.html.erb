@@ -1,30 +1,32 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8-col-md-offset-2">
-      <div class="text-center">
-        <h3>Hi <%= @profile.firstname %>, welcome to your profile </h3>
-        <p>Here is your own information profile</p>
+  <div class="fix-footer">
+    <div class="row">
+      <div class="col-xs-12 col-md-8-col-md-offset-2">
+        <div class="text-center">
+          <h3>Hi <%= @profile.firstname %>, welcome to your profile </h3>
+          <p>Here is your own information profile</p>
+        </div>
+        <div class="text-center">
+          <%= image_tag @profile.photo, class: 'avatar-tlarge' %>
+        </div>
+        <div class="profile-infos-container">
+        <div class="profile-infos text-center">
+          <h4><%= @profile.firstname.capitalize %> <%= @profile.lastname.capitalize %></h4>
+          <p><%= @profile.age %> years old</p>
+          <p><%= @profile.email %></p>
+          <p class="text-justify profile-description"><%= @profile.description %></p>
+          <%= link_to 'Edit my profile', edit_profile_path, class: 'btn btn-success' %>
+        </div>
       </div>
-      <div class="text-center">
-        <%= image_tag @profile.photo, class: 'avatar-tlarge' %>
-      </div>
-      <div class="profile-infos-container">
-      <div class="profile-infos text-center">
-        <h4><%= @profile.firstname.capitalize %> <%= @profile.lastname.capitalize %></h4>
-        <p><%= @profile.age %> years old</p>
-        <p><%= @profile.email %></p>
-        <p class="text-justify profile-description"><%= @profile.description %></p>
-        <%= link_to 'Edit my profile', edit_profile_path, class: 'btn btn-success' %>
       </div>
     </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="text-center">
-        <p class="cancel">Unhappy? <%= link_to "Cancel my account", registration_path(@profile), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="text-center">
+          <p class="cancel">Unhappy? <%= link_to "Cancel my account", registration_path(@profile), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-        <%= link_to "Back", :back, class: 'cancel'%>
+          <%= link_to "Back", :back, class: 'cancel'%>
+        </div>
       </div>
     </div>
   </div>
