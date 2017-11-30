@@ -1,25 +1,28 @@
 <div class="container">
-  <% @bookings.each do |baby| %>
+  <% @bookings.each do |booking| %>
     <div class="message">
-      <%= image_tag baby.photo, class: 'avatar-square' %>
+      <%= image_tag @baby.photo, class: 'avatar-square' %>
       <div class="message-name">
-        <h3><%= baby.firstname.capitalize %> <%= baby.lastname.capitalize %></h3>
-        <% if baby.age == 1 %>
-          <p><%= baby.age %> year old </p>
+        <h3><%= @baby.firstname.capitalize %> <%= @baby.lastname.capitalize %></h3>
+        <% if @baby.age == 1 %>
+          <p><%= @baby.age %> year old </p>
         <% else %>
-          <p><%= baby.age %> years old </p>
+          <p><%= @baby.age %> years old </p>
         <% end %>
-        <p><strong><%= baby.price %> €</strong></p>
+        <p><strong><%= @baby.price %> €</strong></p>
       </div>
       <div class="message-body">
         <p><strong>Description</strong></p>
-        <p><%= baby.description %></p>
+        <p><%= @booking.starting_date %></p>
+        <p><%= @booking.ending_date %></p>
       </div>
       <div class="message-status">
-        <% if baby.availability == true %>
-          <p> Availability : <strong class="status accepted">yes</strong></p>
-        <% else %>
-          <p> Availability : <strong class="status declined">No</strong> %></p>
+        <% if @booking.status? %>
+          <p> Availability : <strong class="status accepted">accepted</strong></p>
+        <% elsif %>
+          <p> Availability : <strong class="status declined">declined</strong> %></p>
+        <% else  %>
+        <p> Availability : <strong class="status pending">pending</strong> %></p>
         <% end %>
       </div>
     </div>
