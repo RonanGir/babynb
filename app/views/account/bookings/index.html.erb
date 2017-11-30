@@ -1,0 +1,27 @@
+<div class="container">
+  <% @bookings.each do |baby| %>
+    <div class="message">
+      <%= image_tag baby.photo, class: 'avatar-square' %>
+      <div class="message-name">
+        <h3><%= baby.firstname.capitalize %> <%= baby.lastname.capitalize %></h3>
+        <% if baby.age == 1 %>
+          <p><%= baby.age %> year old </p>
+        <% else %>
+          <p><%= baby.age %> years old </p>
+        <% end %>
+        <p><strong><%= baby.price %> €</strong></p>
+      </div>
+      <div class="message-body">
+        <p><strong>Description</strong></p>
+        <p><%= baby.description %></p>
+      </div>
+      <div class="message-status">
+        <% if baby.availability == true %>
+          <p> Availability : <strong class="status accepted">yes</strong></p>
+        <% else %>
+          <p> Availability : <strong class="status declined">No</strong> %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
