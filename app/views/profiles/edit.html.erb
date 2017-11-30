@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="form-container">
+        <div class="col-xs-12">
+          <h1 class="text-center">Edit your profile</h1>
+        </div>
+        <%= simple_form_for(@profile, url: profile_path) do |f| %>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :firstname %>
+              <%= f.input :lastname %>
+              <%= f.input :age %>
+              <%= f.input :gender, as: :radio_buttons, collection: %w(male female) %>
+              <%= f.input :description %>
+              <%= f.input :photo, label_html: { class: "btn btn-default" } %>
+              <%= f.input :photo_cache, as: :hidden %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :email, required: true, autofocus: true %>
+
+              <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+              <%= f.input :password_confirmation, required: false %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <%= f.submit class: 'btn btn-success btn-form' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
