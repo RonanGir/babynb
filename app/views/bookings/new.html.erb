@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="form-container">
+        <div class="col-xs-12">
+          <h1 class="text-center"> You are booking <%= @baby.firstname.capitalize %></h1>
+        </div>
+        <%= simple_form_for [@baby, @booking] do |f| %>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :starting_date %>
+              <%= f.input :ending_date %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <%= f.submit class: 'btn btn-success btn-form' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
