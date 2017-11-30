@@ -31,8 +31,7 @@
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <% if current_user %>
-              <li><a href="#">Profile</a></li>
-              <li><%= link_to 'Settings', edit_user_registration_path %></li>
+              <li><%= link_to 'Profile', profile_path %></li>
               <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><a href="#">Book a baby</a></li>
@@ -52,8 +51,7 @@
         <% if current_user %>
           <li><%= link_to 'Manage my babies', account_babies_path, class: 'navbar-wagon-item navbar-wagon-link' %></li>
           <li><%= link_to 'Manage my bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %></li>
-          <li><a href="#">Profile</a></li>
-          <li><%= link_to 'Settings', edit_user_registration_path %></li>
+          <li><%= link_to 'Profile', profile_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 
         <% else %>

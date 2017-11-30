@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
     resources :bookings, only: [:index] # as renter
   end
+
+  resource :profile, only: [:show, :edit, :update]
 end
