@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :babies, only: [:index, :show] do
-    resources :bookings, only: [:new, :create] # as renter
+    resources :bookings, only: [:new, :create ] # as renter
   end
 
   namespace :account do
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :bookings, only: [:index] # as renter
+    resources :bookings, only: [:index, :destroy] # as renter
   end
 
   resource :profile, only: [:show, :edit, :update]

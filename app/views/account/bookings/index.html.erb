@@ -1,29 +1,41 @@
 <div class="container">
   <% @bookings.each do |booking| %>
     <div class="message">
-      <%= image_tag @baby.photo, class: 'avatar-square' %>
+      <%= image_tag booking.baby.photo, class: 'avatar-square' %>
       <div class="message-name">
-        <h3><%= @baby.firstname.capitalize %> <%= @baby.lastname.capitalize %></h3>
-        <% if @baby.age == 1 %>
-          <p><%= @baby.age %> year old </p>
-        <% else %>
-          <p><%= @baby.age %> years old </p>
-        <% end %>
-        <p><strong><%= @baby.price %> €</strong></p>
+      <h3><%= booking.baby.firstname.capitalize %> <%= booking.baby.lastname.capitalize %></h3>
+        <p><strong><%= pluralize booking.baby.age, "year" %> old</strong></p>
       </div>
       <div class="message-body">
-        <p><strong>Description</strong></p>
-        <p><%= @booking.starting_date %></p>
-        <p><%= @booking.ending_date %></p>
+
+        <p><strong>Number of Booking's day</strong></p>
+<!--         <p><%= booking.starting_date %></p>
+        <p><%= booking.ending_date %></p> -->
+        <p><%= pluralize days_count_for(booking), "day" %><p>
       </div>
+
+      <div class="message-cost">
+        <p><strong>Total price: </strong></p>
+<!--         <p><%= booking.starting_date %></p>
+        <p><%= booking.ending_date %></p> -->
+        <p><%= total_price_for(booking)%>€</p>
+      </div>
+
       <div class="message-status">
-        <% if @booking.status? %>
+        <% if booking.status? %>
           <p> Availability : <strong class="status accepted">accepted</strong></p>
         <% elsif %>
-          <p> Availability : <strong class="status declined">declined</strong> %></p>
+          <p> Availability : <strong class="status declined">declined</strong></p>
         <% else  %>
-        <p> Availability : <strong class="status pending">pending</strong> %></p>
+        <p> Availability : <strong class="status pending">pending</strong></p>
         <% end %>
+         <%= link_to baby_path(booking.baby) do %>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        <% end %>
+         <%= link_to account_booking_path(booking), method: :delete do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+
       </div>
     </div>
   <% end %>

@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def new
     @baby = Baby.find(params[:baby_id])
     @booking = Booking.new
@@ -15,7 +14,7 @@ class BookingsController < ApplicationController
     else
       render 'bookings/new'
     end
-end
+  end
 
  private
 
