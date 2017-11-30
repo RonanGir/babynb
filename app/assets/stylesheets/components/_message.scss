@@ -7,9 +7,6 @@
 .message:last-child {
   border-bottom: none;
 }
-.message-body {
-  flex-grow: 1;
-}
 .message-name {
   padding-left: 10px;
   min-width: 100px;
@@ -23,6 +20,9 @@
   font-weight: lighter;
   opacity: 0.6;
   margin-top: 5px;
+}
+.message-body {
+  flex-grow: 1;
 }
 .message-body {
   padding-left: 10px;
@@ -57,3 +57,31 @@
 .status.pending {
   color: lightgrey;
 }
+.message-cost {
+  flex-grow: 1;
+}
+.message-cost {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.message-cost {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.message-cost strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.message-cost p {
+  margin: 6px 0;
+}
+.message a {
+  color: $dark-gray;
+  text-decoration: none;
+}
+.message a:hover {
+  color: $gray;
+  text-decoration: none;
+}
+
