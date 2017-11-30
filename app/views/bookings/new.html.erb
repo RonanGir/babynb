@@ -4,6 +4,7 @@
       <div class="form-container">
         <div class="col-xs-12">
           <h1 class="text-center"> You are booking <%= @baby.firstname.capitalize %></h1>
+          <p class= "text-center"> Check availibilty for <%= @baby.firstname.capitalize %></p>
         </div>
         <%= simple_form_for [@baby, @booking] do |f| %>
           <div class="row">
