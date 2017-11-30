@@ -4,15 +4,55 @@
       <div class="form-container">
         <div class="col-xs-12">
           <h1 class="text-center"> You are booking <%= @baby.firstname.capitalize %></h1>
-          <p class= "text-center"> Check availibilty for <%= @baby.firstname.capitalize %></p>
+          <!-- infos bébé -->
+            <div class="baby-resume">
+              <div class="row">
+                <div class="col-xs-12 col-md-8-col-md-offset-2">
+                  <div class="text-center">
+                    <%= image_tag @baby.photo, class: 'avatar-tlarge' %>
+                  </div>
+                  <div class="baby-infos-container">
+                  <div class="baby-infos text-center">
+                  </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <br>
+            <br>
+          <!-- Date Picker -->
+          <p class= "text-center"> Please, choose a period below to book <%= @baby.firstname.capitalize %></p>
         </div>
         <%= simple_form_for [@baby, @booking] do |f| %>
           <div class="row">
             <div class="col-xs-12 col-md-6">
-              <%= f.input :starting_date %>
-              <%= f.input :ending_date %>
+              <br>
+              <br>
+              <div class="form-group">
+                  <div class='input-group date' id='datetimepicker6'>
+                      <input type='text' class="form-control" placeholder='Start Date' />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+            </div>
+            <div class='col-xs-12 col-md-6'>
+              <br>
+              <br>
+              <div class="form-group">
+                  <div class='input-group date' id='datetimepicker7'>
+                      <input type='text' class="form-control" placeholder='End Date' />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
             </div>
           </div>
+          <br>
+          <br>
+          <br>
           <div class="row">
             <div class="col-xs-12 text-center">
               <%= f.submit class: 'btn btn-success btn-form' %>
@@ -23,3 +63,22 @@
     </div>
   </div>
 </div>
+
+
+<!-- JS Datepicker -->
+<%= content_for(:after_js) do %>
+  <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker6').datetimepicker();
+          $('#datetimepicker7').datetimepicker({
+              useCurrent: false //Important! See issue #1075
+          });
+          $("#datetimepicker6").on("dp.change", function (e) {
+              $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+          });
+          $("#datetimepicker7").on("dp.change", function (e) {
+              $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+<% end %>
