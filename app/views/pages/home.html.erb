@@ -9,11 +9,14 @@
         <h1>Welcome on Babynb</h1>
         <p>Click on the link below to see all the baby for rent</p>
         <%= link_to 'See all the Babies', babies_path, class: 'btn btn-danger btn-lg' %>
+          <div class="arrow bounce">
+            <a class="fa fa-arrow-down fa-2x" href="#features"></a>
+          </div>
       </div>
     </div>
   </div>
-    <div class="features">
-      <h1 class="text-center">Features</h1>
+    <div id="features" class="features">
+      <h1 class="text-center"><a href="features">Features</a></h1>
       <div class="row">
         <div class="col-xs-12 col-sm-4">
           <div class="text-center">
@@ -42,6 +45,9 @@
            <p>100% safe</p>
          </div>
         </div>
-      </div>
+<!--         <h1>Please, choose a date</h1>
+          <label for="dateofbirth">When do you want a baby ?</label>
+          <input type="date" name="dateofbirth" id="dateofbirth">
+      </div> -->
   </div>
 </div>
