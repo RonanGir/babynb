@@ -35,12 +35,13 @@
          <%= link_to baby_path(booking.baby) do %>
           <i class="fa fa-eye" aria-hidden="true"></i>
         <% end %>
-         <%= link_to account_booking_path(booking), method: :delete do %>
+         <%= link_to account_booking_path(booking), data: { confirm: "Delete this booking?" }, method: :delete do %>
           <i class="fa fa-trash" aria-hidden="true"></i>
         <% end %>
-        
+
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
