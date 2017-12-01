@@ -29,8 +29,8 @@
               <br>
               <br>
               <div class="form-group">
-                  <div class='input-group date' id='datetimepicker6'>
-                      <input type='text' class="form-control" placeholder='Start Date' />
+                  <div class='input-group date' id='starting_date'>
+                      <input type='text' name="booking[starting_date]" class="form-control" placeholder='Start Date' />
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -41,8 +41,8 @@
               <br>
               <br>
               <div class="form-group">
-                  <div class='input-group date' id='datetimepicker7'>
-                      <input type='text' class="form-control" placeholder='End Date' />
+                  <div class='input-group date' id='ending_date'>
+                      <input type='text' name="booking[ending_date]" class="form-control" placeholder='End Date' />
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -53,6 +53,7 @@
           <br>
           <br>
           <br>
+          <!-- submit button -->
           <div class="row">
             <div class="col-xs-12 text-center">
               <%= f.submit class: 'btn btn-success btn-form' %>
@@ -69,15 +70,19 @@
 <%= content_for(:after_js) do %>
   <script type="text/javascript">
       $(function () {
-          $('#datetimepicker6').datetimepicker();
-          $('#datetimepicker7').datetimepicker({
+          $('#starting_date').datetimepicker({
+              format: "YYYY-M-D"
+            }
+          );
+          $('#ending_date').datetimepicker({
+              format: "YYYY-M-D",
               useCurrent: false //Important! See issue #1075
           });
-          $("#datetimepicker6").on("dp.change", function (e) {
-              $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+          $("#starting_date").on("dp.change", function (e) {
+              $('#ending_date').data("DateTimePicker").minDate(e.date);
           });
-          $("#datetimepicker7").on("dp.change", function (e) {
-              $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+          $("#ending_date").on("dp.change", function (e) {
+              $('#starting_date').data("DateTimePicker").maxDate(e.date);
           });
       });
   </script>
