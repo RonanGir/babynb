@@ -1,12 +1,38 @@
 <% content_for :title, "Easy way to rent a baby | Babynb" %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4"></div>
-
+  <div class="col-xs-12">
     <h1 class="text-center">The best place to book a Baby</h1>
     <p class="text-center">We have selected the strongest, cutest and cleanest babies from all around the world for you</p>
 
-    <%= render "babies/card" %>
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="search-bar">
+      <form action="<%= babies_path %>" method="GET">
+        <label class="control-label"></label>
+        <div class="inner-addon right-addon">
+          <i class="glyphicon glyphicon-search"></i>
+          <input id="search" value="<%= params.dig(:search, :location) %>" type="text" name="search[location]" class="form-control" placeholder="Search by location" />
+          <input class="btn btn-success" type="submit" value="GO">
+          <br>
+          <br>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <%= render "babies/card" %>
   </div>
 </div>
+
+<%= content_for(:after_js) do %>
+  <script type="text/javascript">
+    $('#search').keypress(function (e)
+      {
+        if (e.which == '13') {
+
+      }
+    });
+  </script>
+<% end %>
+
+

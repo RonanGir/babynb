@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+    resources :search, only: [:index]
+
   devise_for :users
 
   resources :babies, only: [:index, :show] do
