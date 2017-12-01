@@ -7,13 +7,28 @@
           <p>Here is your own information profile</p>
         </div>
         <div class="text-center">
-          <%= image_tag @profile.photo, class: 'avatar-tlarge' %>
+          <% if @profile.photo.blank? %>
+          <%= image_tag("smiling_baby.png", height: 100) %>
+<!--             <img src="smiling_baby.png" alt=" add your own photo">
+ -->          <% else %>
+            <%= image_tag @profile.photo, class: 'avatar-tlarge' %>
+          <% end %>
+
         </div>
         <div class="profile-infos-container">
         <div class="profile-infos text-center">
-          <h4><%= @profile.firstname.capitalize %> <%= @profile.lastname.capitalize %></h4>
-          <p><%= @profile.age %> years old</p>
+          <% if @profile.firstname.nil? || @profile.lastname.nil? %>
+            <h4><%= @profile.firstname %> <%= @profile.lastname %></h4>
+          <% else  %>
+            <h4><%= @profile.firstname.capitalize %> <%= @profile.lastname.capitalize %></h4>
+          <% end %>
+
+          <% if @profile.age.nil? %>
+          <% else %>
+            <p><%= @profile.age %> years old</p>
+          <% end %>
           <p><%= @profile.email %></p>
+
           <p class="text-justify profile-description"><%= @profile.description %></p>
           <%= link_to 'Edit my profile', edit_profile_path, class: 'btn btn-success' %>
         </div>
