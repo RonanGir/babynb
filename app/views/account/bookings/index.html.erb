@@ -1,25 +1,26 @@
 <div class="container">
-  <% @bookings.each do |booking| %>
-    <div class="message">
-      <%= image_tag booking.baby.photo, class: 'avatar-square' %>
-      <div class="message-name">
-      <h3><%= booking.baby.firstname.capitalize %> <%= booking.baby.lastname.capitalize %></h3>
-        <p><strong><%= pluralize booking.baby.age, "year" %> old</strong></p>
-      </div>
-      <div class="message-body">
+  <div class="fix-footer">
+    <% @bookings.each do |booking| %>
+      <div class="message">
+        <%= image_tag booking.baby.photo, class: 'avatar-square' %>
+        <div class="message-name">
+        <h3><%= booking.baby.firstname.capitalize %> <%= booking.baby.lastname.capitalize %></h3>
+          <p><strong><%= pluralize booking.baby.age, "year" %> old</strong></p>
+        </div>
+        <div class="message-body">
 
-        <p><strong>Number of Booking's day</strong></p>
-<!--         <p><%= booking.starting_date %></p>
-        <p><%= booking.ending_date %></p> -->
-        <p><%= pluralize days_count_for(booking), "day" %><p>
-      </div>
+          <p><strong>Number of Booking's day</strong></p>
+  <!--         <p><%= booking.starting_date %></p>
+          <p><%= booking.ending_date %></p> -->
+          <p><%= pluralize days_count_for(booking), "day" %><p>
+        </div>
 
-      <div class="message-cost">
-        <p><strong>Total price: </strong></p>
-<!--         <p><%= booking.starting_date %></p>
-        <p><%= booking.ending_date %></p> -->
-        <p><%= total_price_for(booking)%>€</p>
-      </div>
+        <div class="message-cost">
+          <p><strong>Total price: </strong></p>
+  <!--         <p><%= booking.starting_date %></p>
+          <p><%= booking.ending_date %></p> -->
+          <p><%= total_price_for(booking)%>€</p>
+        </div>
 
       <div class="message-status">
         <% if booking.status == "accepted" %>
@@ -35,8 +36,9 @@
          <%= link_to account_booking_path(booking), method: :delete do %>
           <i class="fa fa-trash" aria-hidden="true"></i>
         <% end %>
-
+        
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
