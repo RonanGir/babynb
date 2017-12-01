@@ -22,9 +22,9 @@
       </div>
 
       <div class="message-status">
-        <% if booking.status? %>
+        <% if booking.status == "accepted" %>
           <p> Availability : <strong class="status accepted">accepted</strong></p>
-        <% elsif %>
+        <% elsif booking.status == "declined" %>
           <p> Availability : <strong class="status declined">declined</strong></p>
         <% else  %>
         <p> Availability : <strong class="status pending">pending</strong></p>

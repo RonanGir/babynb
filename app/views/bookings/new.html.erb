@@ -70,8 +70,12 @@
 <%= content_for(:after_js) do %>
   <script type="text/javascript">
       $(function () {
-          $('#starting_date').datetimepicker();
+          $('#starting_date').datetimepicker({
+              format: "YYYY-M-D"
+            }
+          );
           $('#ending_date').datetimepicker({
+              format: "YYYY-M-D",
               useCurrent: false //Important! See issue #1075
           });
           $("#starting_date").on("dp.change", function (e) {
