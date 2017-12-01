@@ -1,0 +1,39 @@
+<% content_for :title, 'All your requests | request.Babynb' %>
+
+<div class="container">
+  <div class="fix-footer">
+    <h1 class="text-center"> Manage all your booking requests</h1>
+    <% @requests.each do |request|  %>
+      <div class="message">
+        <%= image_tag request.baby.photo, class: 'avatar-square' %>
+        <div class="message-name">
+          <h3><%= request.baby.firstname.capitalize %> <%= request.baby.lastname.capitalize %></h3>
+          <% if request.baby.age == 1 %>
+            <p><%= request.baby.age %> year old </p>
+          <% else %>
+            <p><%= request.baby.age %> years old </p>
+          <% end %>
+          <p><strong><%= request.baby.price %> €</strong> /day</p>
+        </div>
+        <div class="message-body">
+          <p><strong>Description</strong></p>
+          <p><%#= request.starting_date %><%#= request.ending_date %></p>
+        </div>
+        <div class="message-status">
+          <% if request.status == "accepted" %>
+            <p> Availability : <strong class="status accepted">accepted</strong></p>
+          <% elsif request.status == "declined" %>
+            <p> Availability : <strong class="status declined">declined</strong></p>
+          <% else  %>
+          <p> Availability : <strong class="status pending">pending</strong></p>
+          <% end %>
+          <p><%= link_to 'accept', accept_account_request_path(request), class: 'btn btn-success', method: :patch %></p>
+          <p><%= link_to 'decline', decline_account_request_path(request), class: 'btn btn-danger', method: :patch %>
+          </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

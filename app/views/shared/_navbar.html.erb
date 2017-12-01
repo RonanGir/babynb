@@ -7,9 +7,9 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if current_user %>
-      <%= link_to 'Manage my bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+      <%= link_to 'My bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %>
 
-      <%= link_to 'Manage my babies', account_babies_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+      <%= link_to 'My babies', account_babies_path, class: 'navbar-wagon-item navbar-wagon-link' %>
     <% else %>
       <%= link_to 'Add bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %>
 
@@ -32,6 +32,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <% if current_user %>
               <li><%= link_to 'Profile', profile_path %></li>
+              <li><%= link_to 'Manage my requests', account_requests_path %></li>
               <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><a href="#">Book a baby</a></li>
@@ -49,9 +50,10 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if current_user %>
-          <li><%= link_to 'Manage my babies', account_babies_path, class: 'navbar-wagon-item navbar-wagon-link' %></li>
-          <li><%= link_to 'Manage my bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %></li>
+          <li><%= link_to 'My babies', account_babies_path, class: 'navbar-wagon-item navbar-wagon-link' %></li>
+          <li><%= link_to 'My bookings', account_bookings_path, class: 'navbar-wagon-item navbar-wagon-link' %></li>
           <li><%= link_to 'Profile', profile_path %></li>
+           <li><%= link_to 'Manage my requests', account_requests_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 
         <% else %>
