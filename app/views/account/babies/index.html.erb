@@ -2,9 +2,7 @@
 
 <div class="container">
   <div class="fix-footer">
-    <div class="text-center add-baby-button">
-    <%= link_to 'Add a new baby', new_account_baby_path, class: 'btn btn-success' %>
-    </div>
+    <h1 class="text-center"> Manage all your babies</h1>
     <% @babies.each do |baby| %>
       <div class="message">
         <%= image_tag baby.photo, class: 'avatar-square' %>
@@ -20,6 +18,7 @@
         <div class="message-body">
           <p><strong>Description</strong></p>
           <p><%= baby.description %></p>
+          <!-- <p><#%= link_to 'accept', accept_account_request_path, class: 'btn btn-succes' %> - <%#= link_to 'decline', decline_account_request_path, class: 'btn btn-succes' %></p> -->
         </div>
         <div class="message-status">
           <% if baby.availability == true %>
@@ -39,5 +38,8 @@
         </div>
       </div>
     <% end %>
+    <div class="text-center add-baby-button">
+      <%= link_to 'Add a new baby', new_account_baby_path, class: 'btn btn-success' %>
+    </div>
   </div>
 </div>
